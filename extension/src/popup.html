@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="../lib/tailwindcss_3_3_2.min.js"></script> -->
+  <title>Fast4Pandora</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body style="min-width: 300px;">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Fast4Proxy</h1>
+    <div class="bg-white p-4 rounded-lg shadow-md mt-4 mb-4 flex flex-col">
+      <div class="flex justify-evenly">
+        <div class="block font-bold text-xl">
+          Proxy Status 
+        </div>
+        <div class="relative flex items-center justify-center">
+          <button id="proxy-status-button" class="ml-2 relative w-12 h-6 rounded-full bg-gray-400 focus:outline-none">
+            <span class="absolute left-0 top-0 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300 ease-in-out transform"></span>
+          </button>
+          <span id="proxy-status-text" class="absolute top-6 left-3 text-gray-700 font-bold">Inactive</span>
+        </div>
+      </div>
+      <div class="mt-2 flex justify-center">
+        <span class="text-sm text-white font-bold" id="current-page-proxied"></span>  
+      </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <div class="block font-bold mb-2 text-xl">
+        Proxy Settings 
+      </div>
+      <div class="mb-4">
+        <div class="block text-gray-700 font-bold mb-2" for="proxy-url">
+          Modify Proxy URL
+        </div>
+        <div class="flex items-center">
+          <input class="mr-1 appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="modify-proxy-hostname" type="text" placeholder="Hostname">
+          <input class="appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="modify-proxy-port" type="text" placeholder="Port">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline" id="modify-proxy-button">
+            Modify
+          </button>
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="block text-gray-700 font-bold mb-2" for="proxy-url">
+          Add Site To Proxy
+        </div>
+        <div class="flex items-center">
+          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="proxy-url" type="text" placeholder="www.example.com">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline" id="add-proxy-url">
+            Add
+          </button>
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="block text-gray-700 font-bold mb-2">
+          Proxied Sites
+        </div>
+        <div id="proxied-sites-container" class="ml-2">
+          <ul id="proxied-sites-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
