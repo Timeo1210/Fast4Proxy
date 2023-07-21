@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Fast4Proxy",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Your personalized proxy manager. Control website proxying for optimal browsing. Simple, secure, and efficient.",
   "icons": {
     "16": "icons/16.png",
