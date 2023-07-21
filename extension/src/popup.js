@@ -160,22 +160,22 @@ proxyStatusButton.addEventListener("click", async () => {
   toggleProxyActiveStatusDOM(proxyActive);
 });
 
-(async () => {
+const fetchActive = async () => {
   const proxyActive = await getProxyIsActive();
   toggleProxyActiveStatusDOM(proxyActive);
-})();
+};
 
 /* 
   proxiedUrlsList Code
 */
 const proxiedUrlsList = document.getElementById("proxied-sites");
-(async () => {
+const fetchProxiedUrls = async () => {
   const proxiedUrls = await getProxiedUrls();
   proxiedUrls.forEach((url) => {
     const listItem = createProxiedSiteListItem(url);
     proxiedSitesList.appendChild(listItem);
   });
-})();
+};
 
 const proxiedSitesList = document.getElementById("proxied-sites-list");
 
@@ -261,4 +261,15 @@ modifyProxyButton.addEventListener("click", async () => {
 /*
   Current Tab Proxied Code
 */
-checkIfCurrentPageIsProxied();
+(() => {
+  chrome.runtime.sendMessage({ message: "loadBackground" });
+})();
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.message == "backgroundLoaded") {
+    console.log("FECTHING");
+    fetchActive();
+    fetchProxiedUrls();
+    checkIfCurrentPageIsProxied();
+  }
+});
