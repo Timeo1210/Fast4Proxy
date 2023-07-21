@@ -1,4 +1,4 @@
-# Fast4proxy
+# Fast4Proxy
 
 ![Presentation](https://github.com/Timeo1210/Fast4Proxy/blob/master/presentation.png)
 
@@ -14,7 +14,7 @@ Fast4Proxy is absolutely free and open source. It does not insert ads into any w
 
 ## Installation
 
-Check the Chrome Web Store
+Check the [Chrome Web Store](https://chrome.google.com/webstore/detail/fast4proxy/hgkepgmpmfmmapoofiknghebbajbobbc).
 
 ## Licence
 
